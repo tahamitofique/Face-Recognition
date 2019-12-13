@@ -34,13 +34,16 @@ video.addEventListener('play', () => {
   }, 100)
 })
 }
+
 function loadLabeledImages() {
-  const labels = ['tahami']
+  const labels = ['tahami'];
+  //const proxy = `https://cors-anywhere.herokuapp.com/`;
   return Promise.all(
     labels.map(async label => {
       const descriptions = []
       for (let i = 1; i <= 2; i++) {
-        const img = await faceapi.fetchImage(`https://github.com/tahamitofique/Face-Recognition/tree/master/labled%20images/${label}/${i}.jpg`)
+        const img = await faceapi.fetchImage(`https://github.com/tahamitofique/Face-Recognition/tree/master/labled%20images/${label}/${i}.jpg`, { mode: 'no-cors' });
+        console.log('img')
         const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
         descriptions.push(detections.descriptor)
       }
