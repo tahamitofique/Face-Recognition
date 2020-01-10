@@ -36,7 +36,7 @@ video.addEventListener('play', () => {
     faceapi.draw.drawDetections(canvas, resizedDetections, { label: results.toString() })
     console.log(results.toString());
     //faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
-  }, 100)
+  }, 10)
 })
 }
 
