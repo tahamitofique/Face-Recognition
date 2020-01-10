@@ -41,7 +41,7 @@ video.addEventListener('play', () => {
 }
 
 function loadLabeledImages() {
-  const labels = ['tahami','saim','taha'];
+  const labels = ['tahami','taha'];
   
   // const labels = ['saim'];
   // const proxy = `https://cors-anywhere.herokuapp.com/`;
@@ -49,7 +49,7 @@ function loadLabeledImages() {
     labels.map(async label => {
       const descriptions = []
       
-       for (let i = 1; i <= 1; i++) {
+       for (let i = 1; i <= 11; i++) {
         //https://raw.githubusercontent.com/tahamitofique/Face-Recognition/master/labled%20images/tahami/1.jpg
         const img = await faceapi.fetchImage(`https://raw.githubusercontent.com/tahamitofique/Face-Recognition/master/labled%20images/${label}/${i}.jpg`, { mode: 'no-cors' });
         
