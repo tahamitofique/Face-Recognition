@@ -34,13 +34,14 @@ video.addEventListener('play', () => {
     const results = resizedDetections.map(d => faceMatcher.findBestMatch(d.descriptor))
     canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height)
     faceapi.draw.drawDetections(canvas, resizedDetections, { label: results.toString() })
+    console.log(results.toString());
     //faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
   }, 100)
 })
 }
 
 function loadLabeledImages() {
-  const labels = ['tahami'];
+  const labels = ['tahami','saim','taha'];
   
   // const labels = ['saim'];
   // const proxy = `https://cors-anywhere.herokuapp.com/`;
@@ -48,16 +49,16 @@ function loadLabeledImages() {
     labels.map(async label => {
       const descriptions = []
       
-      // for (let i = 1; i <= 2; i++) {
-        // https://github.com/tahamitofique/Face-Recognition/tree/master/labled%20images/${label}/
-        const img = await faceapi.fetchImage(`https://avatars0.githubusercontent.com/u/39970823?s=40&v=4`, { mode: 'no-cors' });
+       for (let i = 1; i <= 1; i++) {
+        //https://raw.githubusercontent.com/tahamitofique/Face-Recognition/master/labled%20images/tahami/1.jpg
+        const img = await faceapi.fetchImage(`https://raw.githubusercontent.com/tahamitofique/Face-Recognition/master/labled%20images/${label}/${i}.jpg`, { mode: 'no-cors' });
         
-        console.log(img.src)
+        //console.log(img.src)
         
-        console.log('img')
+        //console.log('img')
         const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
         descriptions.push(detections.descriptor)
-      // }
+       }
 
       return new faceapi.LabeledFaceDescriptors(label, descriptions)
     })
