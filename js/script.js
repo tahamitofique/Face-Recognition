@@ -51,7 +51,7 @@ function loadLabeledImages() {
       
        for (let i = 1; i <= 11; i++) {
         //https://raw.githubusercontent.com/tahamitofique/Face-Recognition/master/labled%20images/tahami/1.jpg
-        const img = await faceapi.fetchImage(`https://raw.githubusercontent.com/tahamitofique/Face-Recognition/master/labled%20images/${label}/${i}.jpg`, { mode: 'no-cors' });
+        const img = await faceapi.fetchImage(`https://raw.githubusercontent.com/tahamitofique/Face-Recognition/master/labled%20images/${label}/${i}.JPG`, { mode: 'no-cors' });
         
         //console.log(img.src)
         
