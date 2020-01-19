@@ -41,7 +41,7 @@ video.addEventListener('play', () => {
 }
 
 function loadLabeledImages() {
-  const labels = ['tahami','taha'];
+  const labels = ['tahami','taha','hammad'];
   
   // const labels = ['saim'];
   // const proxy = `https://cors-anywhere.herokuapp.com/`;
@@ -52,6 +52,8 @@ function loadLabeledImages() {
        for (let i = 1; i <= 1; i++) {
         //https://raw.githubusercontent.com/tahamitofique/Face-Recognition/master/labled%20images/tahami/1.jpg
         const img = await faceapi.fetchImage(`https://raw.githubusercontent.com/tahamitofique/Face-Recognition/master/labled%20images/${label}/${i}.jpg`, { mode: 'no-cors' });
+        //const img = await faceapi.fetchImage(`https://firebasestorage.googleapis.com/v0/b/electronic-voting-d682c.appspot.com/o/${label}%2F${i}.jpg?alt=media&token=18819b84-1299-4e13-aeb5-9dc17a37cced`);
+       
         
         //console.log(img.src)
         
