@@ -41,7 +41,7 @@ video.addEventListener('play', () => {
 }
 
 function loadLabeledImages() {
-  const labels = ['tahami','taha','hammad'];
+  const labels = ['tahami','taha','hammad','neha'];
   
   // const labels = ['saim'];
   // const proxy = `https://cors-anywhere.herokuapp.com/`;
